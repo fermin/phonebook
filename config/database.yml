@@ -4,8 +4,6 @@ development:
   reconnect: false
   database: phonebook
   pool: 5
-  username: dbuser
-  password: password
   port: 5432
 
 test: &test
@@ -14,8 +12,6 @@ test: &test
   reconnect: false
   database: phonebook
   pool: 5
-  username: dbuser
-  password: password
   port: 5432
 
 production:
