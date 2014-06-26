@@ -1,29 +1,26 @@
 development:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   reconnect: false
   database: phonebook
   pool: 5
-  username: root
-  password: mysql
+  port: 5432
 
 test: &test
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   reconnect: false
   database: phonebook
   pool: 5
-  username: root
-  password: mysql
+  port: 5432
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   reconnect: false
   database: phonebook
   pool: 5
-  username: root
-  password: mysql
+  port: 5432
 
 cucumber:
   <<: *test
