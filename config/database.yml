@@ -20,8 +20,6 @@ production:
   reconnect: false
   database: phonebook
   pool: 5
-  username: dbuser
-  password: password
   port: 5432
 
 cucumber:
