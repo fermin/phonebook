@@ -1,0 +1,32 @@
+<div>
+    <h3 class="page_title">员工管理</h3> 
+    <%= link_to '添加员工', new_employee_path, :class => "btn btn-primary new_btn" %>
+</div>
+
+<table class="table table-striped">
+  <tr>
+    <th>姓名</th>
+    <th>地址</th>
+    <th>移动号码</th>
+    <th>固定电话号码</th>
+    <th>职务</th>
+    <th>部门</th>
+    <th>操作</th>
+  </tr>
+
+  <% @employees.includes(:posts,:departments).each do |employee| %>
+    <tr>
+      <td><%= employee.name %></td>
+      <td><%= employee.address %></td>
+      <td><%= employee.mobile_phone %></td>
+      <td><%= employee.telephone %></td>
+      <td><%= employee.posts.map(&:name).join(",") %></td>
+      <td><%= employee.departments.map(&:name).uniq.join(",") %></td>
+      <td><%= link_to '编辑', edit_employee_path(employee) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate(@employees, :renderer => WillPaginate::ActionView::LinkRenderer) %>
+
+

@@ -1,0 +1,34 @@
+<% if @employee.errors.any? %>
+  <div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <%= @employee.errors.full_messages.join(";") %>
+  </div>
+<% end %>
+
+<%= form_for(@employee, role: "form") do |f| %>
+  <div class="form-group">
+    <%= f.label :name, "名称" %> <span class="required">*</span>
+    <%= f.text_field :name, class: "form-control muted", placeholder: "名称" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :address, "地址" %>
+    <%= f.text_field :address, class: "form-control", placeholder: "地址" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mobile_phone, "手机号码" %> <span class="required">*</span>
+    <%= f.text_field :mobile_phone, class: "form-control", placeholder: "手机号码" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :telephone, "固定电话号码" %>
+    <%= f.text_field :telephone, class: "form-control", placeholder: "固定电话号码" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :post_ids, "职位" %><br />
+    <% @posts.each do |post| %>
+      <%= check_box_tag "employee[post_ids][]", post.id, @employee.post_ids.include?(post.id) %>
+      <label for="" style="float:none;margin-left:0"><%= post.name%></label>
+    <% end %>
+  </div>
+  <button type="submit" class="btn btn-primary">保存</button>
+  <%= link_to '取消', employees_path, class: "btn btn-danger" %>
+<% end %>

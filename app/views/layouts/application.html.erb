@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phonebook</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="navbar navbar-default" id="navbar">
+    <div class="navbar-header pull-left">
+      <h2 class="logo">PHONEBOOK</h2>
+    </div>
+	</div>
+
+	<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li><a href="/employees">员工信息管理</a></li>
+      <li><a href="/departments">部门管理</a></li>
+      <li><a href="/posts">职位管理</a></li>
+    </ul>
+  </div>
+
+  <div id="page-content-wrapper">
+    <% if notice %>
+      <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= notice %>
+      </div>
+    <% end %>
+	  <%= yield %>
+  </div>
+
+</body>
+</html>
