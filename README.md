@@ -22,9 +22,7 @@ phonebook
 
 如果网络环境不好可以打开Gemfile文件把gem源切换为国内的源
 
-本项目使用mysql数据库，运行前请将`config/database.yml`中的password改成运行机器的mysql的password，然后运行下面的语句创建本项目的数据库
-
-`rake db:create`
+本项目使用postgresql数据库，运行前请将`config/database.yml`中的信息改成运行机器的信息，然后运行下面的语句创建本项目的数据库
 
 然后执行下边的语句创建表
 
