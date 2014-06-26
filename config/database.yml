@@ -6,6 +6,7 @@ development:
   pool: 5
   username: dbuser
   password: password
+  port: 5432
 
 test: &test
   adapter: postgresql
@@ -15,6 +16,7 @@ test: &test
   pool: 5
   username: dbuser
   password: password
+  port: 5432
 
 production:
   adapter: postgresql
@@ -24,6 +26,7 @@ production:
   pool: 5
   username: dbuser
   password: password
+  port: 5432
 
 cucumber:
   <<: *test
