@@ -1,5 +1,9 @@
-phonebook
+Phonebook
 =========
+本项目是一个公司通讯录程序，可以管理公司的组织结构和员工的通讯录信息
+
+安装运行
+---------
 下载项目文件
 
 `git@github.com:fermin/phonebook.git`
@@ -26,4 +30,14 @@ phonebook
 
 `rake db:migrate`
 
+API接口
+--------
 本项目提供API接口查询数据，具体文档信息请查看项目根目录下的`api.md`文件
+
+测试
+---------
+项目有两种测试方法，使用的工具有Rspec和Cucumber
+Rspec：在项目根目录运行下边的命令
+`rspec`
+Cucumber：在项目根目录运行
+`cucumber features`
