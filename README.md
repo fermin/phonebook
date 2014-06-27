@@ -37,7 +37,12 @@ API接口
 测试
 ---------
 项目有两种测试方法，使用的工具有Rspec和Cucumber
+
 Rspec：在项目根目录运行下边的命令
+
 `rspec`
+
 Cucumber：在项目根目录运行
+
 `cucumber features`
+
